@@ -64,6 +64,12 @@ class RegisterController
         return view('frontend.auth.register');
     }
 
+    public function showRegisterStudent()
+    {
+        abort_unless(config('boilerplate.access.user.registration'), 404);
+        return view('frontend.pages.register-student');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *

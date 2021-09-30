@@ -98,5 +98,7 @@ Route::group(['as' => 'auth.'], function () {
         // Socialite Routes
         Route::get('login/{provider}', [SocialController::class, 'redirect'])->name('social.login');
         Route::get('login/{provider}/callback', [SocialController::class, 'callback']);
+        Route::get('register-student', [RegisterController::class, 'showRegisterStudent']);
     });
 });
+
