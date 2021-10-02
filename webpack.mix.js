@@ -18,6 +18,11 @@ mix.setPublicPath('public')
     .sass('resources/sass/backend/app.scss', 'css/backend.css')
     .js('resources/js/frontend/app.js', 'js/frontend.js')
     .js('resources/js/backend/app.js', 'js/backend.js')
+    .css('resources/css/sb-admin-2.min.css', 'css/frontend.css')
+    .copy(
+        'node_modules/@fortawesome/fontawesome-free/webfonts',
+        'public/webfonts'
+    )
     .extract([
         'alpinejs',
         'jquery',
