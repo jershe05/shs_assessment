@@ -19,7 +19,7 @@
 <body>
     @include('includes.partials.read-only')
     @include('includes.partials.logged-in-as')
-    @include('includes.partials.announcements')
+    {{-- @include('includes.partials.announcements') --}}
 
     <div id="app">
         @include('frontend.includes.nav')

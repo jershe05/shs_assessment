@@ -69,7 +69,7 @@
     <body>
         @include('includes.partials.read-only')
         @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
+        {{-- @include('includes.partials.announcements') --}}
 
         <div id="app" class="flex-center position-ref full-height">
             <div class="top-right links">
