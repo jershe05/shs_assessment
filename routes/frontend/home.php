@@ -1,5 +1,7 @@
 <?php
 
+use App\Domains\Applicant\Http\Controllers\ApplicantController;
+use App\Domains\Assessment\Http\Controllers\AssessmentController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\TermsController;
 use Tabuna\Breadcrumbs\Trail;
@@ -20,3 +22,12 @@ Route::get('terms', [TermsController::class, 'index'])
         $trail->parent('frontend.index')
             ->push(__('Terms & Conditions'), route('frontend.pages.terms'));
     });
+
+Route::post('/applicant-store', [ApplicantController::class, 'store'])
+    ->name('application.store');
+
+Route::get('/applicant-registration', [ApplicantController::class, 'register'])
+    ->name('application.registration');
+
+Route::get('assessment-show/{applicant}', [AssessmentController::class, 'show'])
+    ->name('assessment.show');

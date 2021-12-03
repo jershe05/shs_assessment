@@ -116,4 +116,16 @@ $(function () {
 
     // Enable tooltips everywhere
     $('[data-toggle="tooltip"]').tooltip();
+
+    $(document).on("click", ".open-edit-strand", function () {
+        var strandId = $(this).data('id');
+        var strandName = $(this).data('name');
+        var strandTrack = $(this).data('track');
+        $(".modal-body #strandId").val( strandId );
+        $(".modal-body #strandName").val( strandName );
+        $(".modal-body #strandTrack").val( strandTrack );
+        // As pointed out in comments,
+        // it is unnecessary to have to manually call the modal.
+        // $('#addBookDialog').modal('show');
+   });
 });

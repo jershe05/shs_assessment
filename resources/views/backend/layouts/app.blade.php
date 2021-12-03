@@ -10,19 +10,27 @@
     @yield('meta')
 
     @stack('before-styles')
-    <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/frontend.css') }}" rel="stylesheet">
     <livewire:styles />
     @stack('after-styles')
 </head>
-<body class="c-app">
-    @include('backend.includes.sidebar')
+{{-- <body class="c-app"> --}}
+<body>
+    {{-- @include('backend.includes.sidebar') --}}
 
-    <div class="c-wrapper c-fixed-components">
-        @include('backend.includes.header')
-        @include('includes.partials.read-only')
-        @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
-
+    {{-- <div class="c-wrapper c-fixed-components"> --}}
+        {{-- @include('backend.includes.header') --}}
+   
+        {{-- @include('includes.partials.read-only') --}}
+        {{-- @include('includes.partials.logged-in-as') --}}
+        {{-- @include('includes.partials.announcements') --}}
+    <div id="app">
+        {{-- @include('frontend.includes.nav') --}}
+        <main>
+            @include('frontend.includes.header')
+            @yield('content')
+        </main>
+    {{-- </div><!--app-->
         <div class="c-body">
             <main class="c-main">
                 <div class="container-fluid">
@@ -35,7 +43,7 @@
         </div><!--c-body-->
 
         @include('backend.includes.footer')
-    </div><!--c-wrapper-->
+    </div><!--c-wrapper--> --}}
 
     @stack('before-scripts')
     <script src="{{ mix('js/manifest.js') }}"></script>

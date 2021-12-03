@@ -13,18 +13,18 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ mix('css/frontend.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
     <livewire:styles />
     @stack('after-styles')
 </head>
 <body>
     @include('includes.partials.read-only')
     @include('includes.partials.logged-in-as')
+    {{-- @include('backend.includes.sidebar') --}}
     {{-- @include('includes.partials.announcements') --}}
 
     <div id="app">
-        @include('frontend.includes.nav')
-        @include('includes.partials.messages')
-
+        {{-- @include('frontend.includes.nav') --}}
         <main>
             @yield('content')
         </main>
