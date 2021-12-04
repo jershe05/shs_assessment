@@ -1,6 +1,7 @@
 <?php
 namespace App\Domains\Applicant\Models;
 
+use App\Domains\Result\Models\ApplicantResultPerStrand;
 use Illuminate\Database\Eloquent\Model;
 
 class Applicant extends Model
@@ -14,4 +15,9 @@ class Applicant extends Model
         'address',
         'school'
     ];
+
+    public function applicantResult()
+    {
+        return $this->hasMany(ApplicantResultPerStrand::class);
+    }
 }

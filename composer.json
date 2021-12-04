@@ -11,6 +11,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "arcanedev/log-viewer": "8.x",
+        "barryvdh/laravel-dompdf": "^0.9.0",
         "darkghosthunter/laraguard": "^3.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",

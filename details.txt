@@ -1,0 +1,37 @@
+Track
+  Name
+
+Teacher
+   Name
+   Track_id
+ 
+Question
+  Track_id
+  question
+
+choices
+  question_id
+  answer
+  isCorrect
+
+applicant
+   First name
+   last name
+   middle name
+   address
+   school
+   email
+   phone
+
+assessment
+   date
+   
+
+result
+
+   applicant id
+   questions
+  
+https://hackthestuff.com/article/how-to-convert-html-to-pdf-in-laravel-8
+
+https://www.laravelcode.com/post/how-to-convert-html-to-pdf-laravel-54

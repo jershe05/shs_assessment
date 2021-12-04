@@ -13,7 +13,7 @@
                       Steps to Knowing <br>
                       Which Senior High School Track Best Fits You
                 </h1>
-                <p>
+                <p class="text-white">
                   Under the Enhanced Basic Education Act of 2013, senior high school (SHS) students must pick among four tracks. Upon enrollment in SHS, they must choose from the following tracks.
                 </p>
                 <div class="row details-content">
@@ -21,28 +21,28 @@
                     <div class="col single-detials">
                         <span class="lnr lnr-license"></span>
                         <a href="#"><h4>Academic Track</h4></a>
-                        <p>
+                        <p class="text-white">
                           This track appeals to those who have set their minds towards college education. Divided into degree-specific courses, the Academic track in senior high school aims to prepare students to more advanced university courses. Under this umbrella are four strands.
                         </p>
                     </div>
                     <div class="col single-detials">
                       <span class="lnr lnr-license"></span>
                       <a href="#"><h4>Technical-Vocational-Livelihood (TVL) Track</h4></a>
-                      <p>
+                      <p class="text-white">
                           It calls out to eligible students with subjects focused on job-ready skills. Besides, it offers practical knowledge with matching certificates to help students land their desired job after they graduate from SHS. Under the senior high school tech-voc track are the following strands.
                       </p>
                   </div>
                   <div class="col single-detials">
                       <span class="lnr lnr-license"></span>
                       <a href="#"><h4>Sports Track</h4></a>
-                      <p>
+                      <p class="text-white">
                           Developed to equip SHS students with sports-related and physical fitness and safety knowledge, this track appeals to those who wish to venture into athletics, fitness, and recreational industries.
                       </p>
                   </div>
                   <div class="col single-detials">
                       <span class="lnr lnr-graduation-hat"></span>
                       <a href="#"><h4>Arts and Design Track</h4></a>
-                      <p>
+                      <p class="text-white">
                           Inside this course, students with a penchant for the Arts can enroll in subjects that will hone their skills in visual design and the performing arts.
                       </p>
                   </div>

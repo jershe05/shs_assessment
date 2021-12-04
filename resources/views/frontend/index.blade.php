@@ -50,7 +50,7 @@
                                   <h1 class="text-uppercase">
                                       LNU SHS ASSESSMENT
                                   </h1>
-                                  <p class="pt-10 pb-10">
+                                  <p class="pt-10 pb-10 text-white">
                                     VISION 2020<br />
 
                                     Internationally recognized private University as a model of excellence in integrated instruction, research, and public engagement.
@@ -133,7 +133,7 @@
                                   <h1>Not Yet Satisfied with our Trend?</h1>
                               </div>
                               <div class="col-lg-4 cta-right">
-                                  <a class="primary-btn wh" href="#">view our blog</a>
+                                  <a class="primary-btn wh" href="#">view our Website</a>
                               </div>
                           </div>
                       </div>

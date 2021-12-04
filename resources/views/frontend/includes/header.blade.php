@@ -52,7 +52,7 @@
                 <img src="{{ asset('img/Lyceum_logo.png') }}" width="50" alt="" title="" />
             </div>
             <div>
-                 <h4 class="text-white">LYCEUM-NORTHWESTERN UNIVERSITY SHS</h4>
+                 <h4 class="text-white"><a href="/" class="text-white"> LYCEUM-NORTHWESTERN UNIVERSITY SHS</a></h4>
             </div>
         </div>
 
@@ -67,40 +67,23 @@
 
                 <div class="dropdown-menu dropdown-menu-right pt-0">
                     <div class="dropdown-header bg-light py-2">
-                        <strong>@lang('Account Management')</strong>
+                        <strong>@lang('Settings')</strong>
                     </div>
                         <x-utils.link
                         class="dropdown-item text-dark"
                         icon="c-icon mr-2 cil-education"
                         href="{{ route('admin.tracks') }}">
                         <x-slot name="text">
-                            @lang('Tracks')
+                            @lang('Strands')
                         </x-slot>
                         </x-utils.link>
-                        <x-utils.link
-                        class="dropdown-item text-dark"
-                        icon="c-icon mr-2 cil-align-center"
-                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                        <x-slot name="text">
-                            @lang('Questions')
-                            <x-forms.post :action="route('frontend.auth.logout')" id="logout-form" class="d-none" />
-                        </x-slot>
-                        </x-utils.link>
-                        <x-utils.link
-                        class="dropdown-item text-dark"
-                        icon="c-icon mr-2 cil-clipboard"
-                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                        <x-slot name="text">
-                            @lang('Reports')
-                            <x-forms.post :action="route('frontend.auth.logout')" id="logout-form" class="d-none" />
-                        </x-slot>
-                        </x-utils.link>
+
                         <x-utils.link
                             class="dropdown-item text-dark"
                             icon="c-icon mr-2 cil-user"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <x-slot name="text">
-                                @lang('Users')
+                                @lang('Applicants')
                                 <x-forms.post :action="route('frontend.auth.logout')" id="logout-form" class="d-none" />
                             </x-slot>
                         </x-utils.link>

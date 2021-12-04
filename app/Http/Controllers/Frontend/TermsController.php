@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use PDF;
+
 /**
  * Class TermsController.
  */
@@ -12,6 +14,9 @@ class TermsController
      */
     public function index()
     {
+        PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('frontend.pages.terms');
+        return $pdf->download('pdfview.pdf');
         return view('frontend.pages.terms');
     }
 }

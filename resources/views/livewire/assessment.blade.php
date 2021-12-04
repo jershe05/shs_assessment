@@ -37,12 +37,35 @@
     </div>
     @else
     <div class="jumbotron alert alert-success ">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h1 class="display-4">Congratulations!</h1>
+        <p class="lead">You did well with your assessment test. We are looking forward to welcoming you as one of our senior high students </p>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p>Thank you so much for selecting our school.</p>
+        <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">Strand</th>
+                <th scope="col">Score</th>
+                <th scope="col">%</th>
+              </tr>
+            </thead>
+            <tbody>
+             @foreach ($strands as $item)
+                <tr>
+                    <th scope="row">{{ $item->name }}</th>
+                    <td>{{ $score[$item->id] .'/'. count($item->question) }}</td>
+                    @if($score[$item->id])
+                        <td>{{ number_format($score[$item->id] / count($item->question) * 100, 2) }}%</td>
+                        @else
+                        <td>0%</td>
+                    @endif
+                </tr>
+             @endforeach
+
+            </tbody>
+          </table>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          <a class="btn btn-primary btn-lg" href="{{ route('frontend.result', ['applicant' => $applicant]) }}" role="button">Download Result</a>
         </p>
       </div>
 

@@ -2,6 +2,7 @@
 
 use App\Domains\Applicant\Http\Controllers\ApplicantController;
 use App\Domains\Assessment\Http\Controllers\AssessmentController;
+use App\Domains\Result\Http\Controllers\ResultController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\TermsController;
 use Tabuna\Breadcrumbs\Trail;
@@ -31,3 +32,8 @@ Route::get('/applicant-registration', [ApplicantController::class, 'register'])
 
 Route::get('assessment-show/{applicant}', [AssessmentController::class, 'show'])
     ->name('assessment.show');
+Route::get('result/{applicant}', [AssessmentController::class, 'result'])
+    ->name('result');
+
+
+

@@ -1,5 +1,6 @@
 <?php
 
+use App\Domains\Result\Http\Controllers\ResultController;
 use App\Domains\Tracks\Http\Controllers\TracksController;
 use App\Http\Controllers\Backend\DashboardController;
 use Tabuna\Breadcrumbs\Trail;
@@ -23,7 +24,11 @@ Route::get('question/edit/{question}', [TracksController::class, 'editQuestion']
     ->name('question.edit');
 Route::delete('question/delete/{question}', [TracksController::class, 'deleteQuestion'])
     ->name('question.delete');
+Route::get('strand-result', [ResultController::class, 'getTotalApplicantPerStrand']);
 });
+
+
+
 
 
 

@@ -24,4 +24,9 @@ class Question extends Model
     {
         return $this->belongsTo(Strand::class);
     }
+
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
 }

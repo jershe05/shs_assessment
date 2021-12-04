@@ -5,6 +5,7 @@ namespace App\Domains\Assessment\Http\Controllers;
 use App\Domains\Applicant\Models\Applicant;
 use App\Http\Requests\Frontend\User\StoreApplicantRequest;
 use Illuminate\Http\Request;
+use PDF;
 
 class AssessmentController
 {
@@ -19,5 +20,12 @@ class AssessmentController
     {
         return view('frontend.pages.assessment')
             ->with('applicant', $applicant);
+    }
+    
+    public function result(Applicant $applicant)
+    {
+        PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('frontend.pages.result', ['applicant' => $applicant->id]);
+        return $pdf->download('assessment-result.pdf');
     }
 }

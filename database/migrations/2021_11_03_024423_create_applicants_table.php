@@ -22,6 +22,7 @@ class CreateApplicantsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('school')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
