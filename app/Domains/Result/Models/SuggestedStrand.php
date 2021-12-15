@@ -3,6 +3,7 @@
 namespace App\Domains\Result\Models;
 
 use App\Domains\Applicant\Models\Applicant;
+use App\Domains\Tracks\Models\Strand;
 use Illuminate\Database\Eloquent\Model;
 
 class SuggestedStrand extends Model
@@ -16,5 +17,10 @@ class SuggestedStrand extends Model
     public function applicant()
     {
         return $this->belongsTo(Applicant::class);
+    }
+
+    public function strand()
+    {
+        return $this->belongsTo(Strand::class);
     }
 }

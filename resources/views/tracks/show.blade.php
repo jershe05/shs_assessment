@@ -11,7 +11,7 @@
             <div class="col-md-10" style="margin-top: 200px">
                 <x-backend.card>
                     <x-slot name="header">
-                        Applicant List
+                        List of suggested Students
                     </x-slot>
                     <x-slot name="headerActions">
                         <x-utils.link
@@ -35,7 +35,7 @@
                 </x-backend.card>
                 <x-backend.card>
                     <x-slot name="header">
-                        @lang($strand->name)
+                        {{ $strand->name }} Assessment Item
                     </x-slot>
                     <x-slot name="headerActions">
                         <x-utils.link

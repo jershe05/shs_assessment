@@ -19,4 +19,8 @@ class ApplicantController
     {
         return view('frontend.pages.register-student');
     }
+    public function index()
+    {
+        return view('student.index');
+    }
 }

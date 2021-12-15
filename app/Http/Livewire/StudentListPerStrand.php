@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Domains\Applicant\Models\Applicant;
 use App\Domains\Result\Models\SuggestedStrand;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\DB;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Session;
@@ -19,40 +20,42 @@ class StudentListPerStrand extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make(__('First Name'))
+            Column::make(__('Name'))
                 ->sortable()
-                ->searchable(),
-            Column::make(__('Middle Name'))
-                ->sortable()
-                ->searchable(),
-            Column::make(__('Last Name'))
-                ->sortable()
-                ->searchable(),
+                ->searchable(function($builder, $term) {
+                    return $builder->join('applicants', 'applicants.id', 'suggested_strand.applicant_id')
+                    ->where('last_name', 'like', "%$term%")->select(DB::raw("CONCAT(first_name, ' ', middle_name, ' ', last_name) as name"),
+                    'phone',
+                    'address',
+                    'email',
+                    'school'
+                )->distinct();
+                }),
             Column::make(__('Address'))
-                ->sortable()
-                ->searchable(),
+                ->sortable(),
             Column::make(__('Phone'))
-                ->sortable()
-                ->searchable(),
+                ->sortable(),
+
             Column::make(__('Email'))
-                ->sortable()
-                ->searchable(),
+                ->sortable(),
             Column::make(__('School'))
-                ->sortable()
-                ->searchable(),
-            Column::make(__('Actions')),
+                ->sortable(),
         ];
 
     }
 
     public function query(): Builder
     {
-        $query = SuggestedStrand::where('strand_id', Session('strand'));
-        return $query;
+        $query = SuggestedStrand::join('applicants', 'applicants.id', 'suggested_strand.applicant_id')
+            ->where('strand_id', Session('strand'))
+            ->select(DB::raw("CONCAT(first_name, ' ', middle_name, ' ', last_name) as name"),
+                'phone',
+                'address',
+                'email',
+                'school'
+            )->distinct();
+        return $query->when($this->getFilter('search'), fn ($query, $term) =>
+            $query->where(DB::raw("CONCAT(first_name, ' ', middle_name, ' ', last_name)"), 'like', "%$term%"));
     }
 
-    public function rowView(): string
-    {
-        return 'tracks.includes.applicant-row';
-    }
 }

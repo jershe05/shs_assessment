@@ -1,5 +1,6 @@
 <?php
 
+use App\Domains\Applicant\Http\Controllers\ApplicantController;
 use App\Domains\Result\Http\Controllers\ResultController;
 use App\Domains\Tracks\Http\Controllers\TracksController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -25,7 +26,10 @@ Route::get('question/edit/{question}', [TracksController::class, 'editQuestion']
 Route::delete('question/delete/{question}', [TracksController::class, 'deleteQuestion'])
     ->name('question.delete');
 Route::get('strand-result', [ResultController::class, 'getTotalApplicantPerStrand']);
+Route::get('students', [ApplicantController::class, 'index'])->name('students.index');
 });
+
+
 
 
 

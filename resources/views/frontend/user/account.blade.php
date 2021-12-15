@@ -11,6 +11,13 @@
                         @lang('My Account')
                     </x-slot>
 
+                    <x-slot name="headerActions">
+                        <x-utils.link
+                            class="card-header-action"
+                            :href="route('admin.dashboard')"
+                            :text="__('Back')"
+                        />
+                    </x-slot>
                     <x-slot name="body">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -46,15 +53,7 @@
                                         aria-selected="false" />
                                 @endif
 
-                                <x-utils.link
-                                    :text="__('Two Factor Authentication')"
-                                    class="nav-link"
-                                    id="two-factor-authentication-tab"
-                                    data-toggle="pill"
-                                    href="#two-factor-authentication"
-                                    role="tab"
-                                    aria-controls="two-factor-authentication"
-                                    aria-selected="false"/>
+
                             </div>
                         </nav>
 

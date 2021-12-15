@@ -23,11 +23,9 @@ class QuestionTable extends DataTableComponent
         return [
 
             Column::make(__('ID'))
-                ->sortable()
-                ->searchable(),
+                ->sortable(),
             Column::make(__('Questions'))
-                ->sortable()
-                ->searchable(),
+                ->sortable(),
             Column::make(__('Actions')),
         ];
     }

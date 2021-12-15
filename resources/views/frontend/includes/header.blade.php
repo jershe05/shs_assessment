@@ -29,6 +29,11 @@
                             </div>
 
                             <x-utils.link
+                            :href="route('frontend.user.account')"
+                            :active="activeClass(Route::is('frontend.user.account'))"
+                            :text="__('My Account')"
+                            class="dropdown-item text-dark" />
+                            <x-utils.link
                                 class="dropdown-item text-dark"
                                 icon="c-icon mr-2 cil-account-logout"
                                 onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -69,6 +74,14 @@
                     <div class="dropdown-header bg-light py-2">
                         <strong>@lang('Settings')</strong>
                     </div>
+                     <x-utils.link
+                        class="dropdown-item text-dark"
+                        icon="c-icon mr-2 cil-education"
+                        href="{{ route('admin.dashboard') }}">
+                        <x-slot name="text">
+                            @lang('Dashboard')
+                        </x-slot>
+                        </x-utils.link>
                         <x-utils.link
                         class="dropdown-item text-dark"
                         icon="c-icon mr-2 cil-education"
@@ -81,10 +94,9 @@
                         <x-utils.link
                             class="dropdown-item text-dark"
                             icon="c-icon mr-2 cil-user"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            href="{{ route('admin.students.index') }}">
                             <x-slot name="text">
                                 @lang('Applicants')
-                                <x-forms.post :action="route('frontend.auth.logout')" id="logout-form" class="d-none" />
                             </x-slot>
                         </x-utils.link>
                         <x-utils.link
